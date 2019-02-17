@@ -31,7 +31,7 @@ public class MovieCollectionDataSource {
 
         //get an instance of the database
         MovieCollectionDatabase database = MovieCollectionDatabase.getInstance(context);
-        //get access to DAOs
+        //get access to DAOs the methods were implemented in the MovieCollectionDatabase class
         directorDao = database.directorDao();
         movieDao = database.movieDao();
 // this.dbHelper = new DatabaseSQLiteOpenHelper(context);//if not used room

@@ -1,6 +1,7 @@
-//RoomDatabase class is a class that will extends RoomDatabase
+//This abstract class is a class that will extends RoomDatabase
 //is required in order to generate the SQLite database and associated tables(Entities)
-//Will //creates a singleton of the MovieCollectionDatabase
+//Room will generate a concrete implemetation of the database
+//Will create a singleton of the MovieCollectionDatabase
 //Has abstract methods to expose the Daos
 // Abstact methods returns a MovieDao and a DirectorDao
 package com.example.poppi.moviecollectionapp.db;
@@ -19,13 +20,16 @@ import android.content.Context;
 import com.example.poppi.moviecollectionapp.Models.Director;
 import com.example.poppi.moviecollectionapp.Models.Movie;
 
-@Database(entities = {Movie.class,Director.class}, version = 1)
+@Database(entities = {Movie.class,Director.class}, version = 1)//the entities to be added to the db
 public abstract class MovieCollectionDatabase extends RoomDatabase {
 
     private static final String DATABASE_NAME = "Movie_Collection";
     private static MovieCollectionDatabase INSTANCE = null;
 
+    //Room will generate a concrete implemetation of the database
+    //Since this is an abstract class this instance will be generated from room
     //creates a singleton of the MovieCollectionDatabase
+    //returns an instance of MoviewCollectionDatabase
     public static MovieCollectionDatabase getInstance(Context context){
         if(INSTANCE == null){//create the database
             synchronized (MovieCollectionDatabase.class)

@@ -1,5 +1,16 @@
+//RoomDatabase class is a class that will extends RoomDatabase
+//is required in order to generate the SQLite database and associated tables(Entities)
+//Will //creates a singleton of the MovieCollectionDatabase
+//Has abstract methods to expose the Daos
+// Abstact methods returns a MovieDao and a DirectorDao
 package com.example.poppi.moviecollectionapp.db;
-
+import android.arch.persistence.db.SupportSQLiteDatabase;
+import android.arch.persistence.room.Database;
+import android.arch.persistence.room.Room;
+import android.arch.persistence.room.RoomDatabase;
+import android.arch.persistence.room.migration.Migration;
+import android.content.Context;
+import android.support.annotation.NonNull;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
